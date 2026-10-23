@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 ### Added
+- `dc` 命令行运行器（C++17）：`sleep`、`run`、`wake`、`version`、`help`。
+- `src/dc/runner.{hpp,cpp}`：运行器核心，包含花括号检查与命令分发。
+- `tests/runner_test.cpp`：运行器的单元测试，使用 CTest 运行。
+- `CMakeLists.txt`：跨平台构建脚本。
+- `.github/workflows/build.yml`：在 Ubuntu、macOS、Windows 上构建、测试并上传产物；推送 `v*` 标签时发布 Release。
 - `src/dream/rem.dc`：REM 周期调度器的初版设计。
 - `src/dream/memory.dc`：海马体内存管理（目前只会忘记）。
 - `tests/test_wake.dc`：唯一的测试用例。

@@ -1,0 +1,96 @@
+# 构建并测试 dc 运行器。
+#
+# 在梦里，这个 workflow 每次都是绿的。醒来后请看 Actions 页面确认。
+
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build (${{ matrix.os }}, ${{ matrix.build_type }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        build_type: [Release]
+        include:
+          - os: ubuntu-latest
+            build_type: Debug
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+
+      - name: Build
+        run: cmake --build build --config ${{ matrix.build_type }} --parallel
+
+      - name: Test
+        run: ctest --test-dir build -C ${{ matrix.build_type }} --output-on-failure
+
+      - name: Install
+        run: cmake --install build --config ${{ matrix.build_type }} --prefix dist
+
+      - name: Smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          exe=$(ls dist/bin/dc* | head -n 1)
+          echo "using $exe"
+
+          "$exe" version
+          "$exe" help >/dev/null
+          "$exe" sleep 8
+          "$exe" run src/main.dc
+          "$exe" wake
+
+          # 睡眠不足七小时必须失败
+          if "$exe" sleep 4 2>/dev/null; then
+            echo "expected 'sleep 4' to fail"
+            exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dc-${{ matrix.os }}-${{ matrix.build_type }}
+          path: dist/
+          if-no-files-found: error
+
+  release:
+    name: release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Package
+        run: |
+          cd artifacts
+          for d in dc-*; do
+            tar -czf "$d.tar.gz" -C "$d" .
+          done
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${{ github.ref_name }}" artifacts/*.tar.gz --generate-notes

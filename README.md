@@ -164,6 +164,32 @@ A：有。它在你的潜意识里，叫做"第二天早上的羞耻感"。
 
 欢迎贡献。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)。注意：提交的代码最好是在梦里写的。
 
+## 构建
+
+`dc` 是用 C++17 写的运行器，使用 CMake 构建。
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
+```
+
+构建产物是 `build/dc`（Windows 上是 `build/Release/dc.exe`）。
+
+### 命令
+
+| 命令 | 作用 |
+|---|---|
+| `dc sleep [hours]` | 进入 REM 周期，默认 8 小时，不足 7 小时会报 `TimeoutError` |
+| `dc run <file.dc>` | 在潜意识中编译，在不存在中运行 |
+| `dc wake` | 醒来，输出 segfault |
+| `dc version` | 打印版本 |
+| `dc help` | 打印帮助 |
+
+### GitHub Actions
+
+`.github/workflows/build.yml` 会在 Ubuntu、macOS、Windows 上构建并测试 `dc`，然后执行一次冒烟测试，并上传构建产物。推送 `v*` 标签时会自动创建 Release。
+
 ## 许可证
 
 见 [LICENSE](./LICENSE)。
