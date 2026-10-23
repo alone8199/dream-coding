@@ -13,7 +13,7 @@
 - 扩展接口：`Interpreter::define_function`、`Interpreter::define_global`、`Interpreter::register_module`。
 - 命令：`dc run`（支持 `argv`）、`dc check`、`dc eval`。
 - `examples/`：示例脚本，CI 会检查它们的输出。
-- `docs/language.md`、`docs/extending.md`。
+- `docs/dc-reference.md`、`docs/extending.md`。
 - `tests/interp_test.cpp`：66 项解释器测试。
 
 ### Changed
