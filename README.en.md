@@ -164,7 +164,14 @@ A: Yes. It lives in your subconscious and is called "the shame you feel the next
 - [ ] Solve "forgetting the dream after waking up" (no known fix)
 
 ## Star History
-[![stars](https://afterglow.watch/badge/alone8199/dream-coding)](https://afterglow.watch)
+
+<a href="https://www.star-history.com/?repos=alone8199%2Fdream-coding&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=alone8199/dream-coding&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=alone8199/dream-coding&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=alone8199/dream-coding&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ## Contributing
 
