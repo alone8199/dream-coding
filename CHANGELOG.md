@@ -5,6 +5,22 @@
 ## [Unreleased]
 
 ### Added
+- dc 解释器：词法分析、递归下降语法分析、树遍历求值，支持变量、函数、闭包、递归、`if` / `while` / `for`、`break` / `continue`、列表、字典、字符串方法、`in` 运算符。
+- 错误带文件名和行号，运行时错误以退出码 4 结束。
+- 模块系统：`import name;` 加载标准库或注册的模块，`import "path.dc";` 加载文件模块，以 `_` 开头的名字不导出。
+- 标准库：`math`（`sqrt`、`pow`、`min`、`max` 等）、`dream`（`sleep`、`wake`）。
+- 全局函数：`print`、`len`、`str`、`num`、`int`、`type`、`range`、`list`、`assert`、`raise`、`time`。
+- 扩展接口：`Interpreter::define_function`、`Interpreter::define_global`、`Interpreter::register_module`。
+- 命令：`dc run`（支持 `argv`）、`dc check`、`dc eval`。
+- `examples/`：示例脚本，CI 会检查它们的输出。
+- `docs/language.md`、`docs/extending.md`。
+- `tests/interp_test.cpp`：66 项解释器测试。
+
+### Changed
+- `src/main.dc` 改为可以运行的程序；早期的伪代码移到 `pseudocode/`。
+- `dc run` 不再只检查括号，而是真正执行脚本。
+
+### Previously added
 - `dc` 命令行运行器（C++17）：`sleep`、`run`、`wake`、`version`、`help`。
 - `src/dc/runner.{hpp,cpp}`：运行器核心，包含花括号检查与命令分发。
 - `tests/runner_test.cpp`：运行器的单元测试，使用 CTest 运行。

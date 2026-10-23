@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(dc
-    VERSION 0.2.0
-    DESCRIPTION "Dream Coding runner: compile in subconscious, run in nonexistent"
+    VERSION 0.3.0
+    DESCRIPTION "Dream Coding: a Python-like interpreter that runs in the subconscious"
     LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -10,13 +10,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(MSVC)
-    add_compile_options(/W4)
+    add_compile_options(/W4 /utf-8)
 else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# 运行器核心，供可执行文件与测试共用。
-add_library(dc_core STATIC src/dc/runner.cpp)
+# 解释器核心：词法、语法、值、求值器、内置函数、标准库、命令行逻辑。
+add_library(dc_core STATIC
+    src/dc/lexer.cpp
+    src/dc/parser.cpp
+    src/dc/value.cpp
+    src/dc/interpreter.cpp
+    src/dc/builtins.cpp
+    src/dc/stdlib.cpp
+    src/dc/runner.cpp)
 target_include_directories(dc_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # 命令行程序。
@@ -31,4 +38,8 @@ if(BUILD_TESTING)
     add_executable(dc_tests tests/runner_test.cpp)
     target_link_libraries(dc_tests PRIVATE dc_core)
     add_test(NAME dc_tests COMMAND dc_tests)
+
+    add_executable(dc_interp_tests tests/interp_test.cpp)
+    target_link_libraries(dc_interp_tests PRIVATE dc_core)
+    add_test(NAME dc_interp_tests COMMAND dc_interp_tests)
 endif()

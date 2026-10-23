@@ -1,39 +1,34 @@
-// main.dc
-// 程序入口。梦的开始。
-//
-// 编译于潜意识，运行于不存在。
+# main.dc
+# 程序入口。梦的开始。
+#
+# 编译于潜意识，运行于不存在。
 
-import stages.compile;
-import stages.run;
-import stages.debug;
-import stages.commit;
-import stages.deploy;
-import dream.rem;
-import dream.memory;
+import dream;
 
-// 入口函数。闭眼之后才会执行。
-sleep main() {
-    let memory = dream.memory.init();
-
-    // 第一阶段：在潜意识中编译
-    let image = stages.compile.run(memory);
-
-    // 第二阶段：在不存在中运行
-    let result = stages.run.execute(image);
-
-    // 若结果存在 bug，进入解梦而非调试
-    if (result.has_bugs()) {
-        stages.debug.interpret(result);
-    }
-
-    // 入睡即提交
-    stages.commit.sleep_commit(result);
-
-    // 醒来，假装什么都没发生
-    stages.deploy.wake_and_pretend();
+fn compile(source) {
+    print("[compile]", "image of", source);
+    return "image:" + source;
 }
 
-// 如果 main 没有正常结束，输出这一行。
-on crash(reason) {
-    terminal.print("Segmentation fault (dream dumped)");
+fn run(image) {
+    print("[run]", "executing", image, "in nonexistent");
+    return {ok: true, image: image};
 }
+
+fn debug_dream(result) {
+    print("[debug] not debugging, interpreting the dream instead");
+}
+
+fn commit(result) {
+    print("[commit] sleep_commit: dream: " + result.image);
+}
+
+let result = run(compile("main.dc"));
+
+if not result.ok {
+    debug_dream(result);
+}
+
+commit(result);
+dream.sleep(8);
+dream.wake();

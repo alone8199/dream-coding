@@ -1,0 +1,15 @@
+# 标准库 dream 模块：睡眠与醒来。
+import dream;
+import math;
+
+let hours = 8;
+print("sleeping for", hours, "hours");
+dream.sleep(hours);
+
+let dreams = ["flying", "falling", "exam without pencil"];
+for d in dreams {
+    print("dream:", d.upper());
+}
+
+print("area of a circle with radius 3:", math.pi * math.pow(3, 2));
+dream.wake();

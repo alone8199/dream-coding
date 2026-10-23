@@ -1,0 +1,5 @@
+# 导入用户模块。路径相对于本文件所在目录。
+import "lib/greet.dc";
+
+print(greet.greet("sleeper"));
+print("greet version", greet.version);

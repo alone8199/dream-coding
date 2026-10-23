@@ -1,0 +1,26 @@
+# 递归、列表和闭包
+fn fib(n) {
+    if n < 2 {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+let row = [];
+for i in range(10) {
+    row.push(fib(i));
+}
+print("fib(0..9):", row.join(", "));
+
+fn counter() {
+    let count = 0;
+    return fn() {
+        count = count + 1;
+        return count;
+    };
+}
+
+let next = counter();
+next();
+next();
+print("counter after 3 calls:", next());

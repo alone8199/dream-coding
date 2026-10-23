@@ -1,0 +1,10 @@
+# 一个用户模块。
+# 以 _ 开头的名字是私有的，不会被导出。
+
+let _prefix = "dream";
+
+fn greet(name) {
+    return "[" + _prefix + "] hello, " + name;
+}
+
+let version = "1.0";
