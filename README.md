@@ -164,7 +164,7 @@ A：有。它在你的潜意识里，叫做"第二天早上的羞耻感"。
 - [ ] 解决 "醒来后忘记梦的内容" 问题（目前无解）
 
 ## Star History
-[![stars](https://afterglow.watch/badge/OWNER/REPO)](https://afterglow.watch)
+[![stars](https://afterglow.watch/badge/alone8199/dream-coding)](https://afterglow.watch)
 
 ## 贡献
 
