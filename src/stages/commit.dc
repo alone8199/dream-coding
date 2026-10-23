@@ -1,0 +1,20 @@
+// stages/commit.dc
+// 发生在：你闭上眼睛的那一刻。
+
+module stages.commit;
+
+// 入睡即提交。
+// 不需要 git add，不需要 commit message，不需要 push。
+// 你只需要睡着，剩下的由潜意识完成。
+fn sleep_commit(result) {
+    let message = result.dream_summary();
+
+    // 若你醒来后还记得 message，可以手动补一个真正的 commit
+    // 若不记得，下面这行会自动生成一个
+    let fallback = "dream: 梦见了什么，但是醒来就忘了";
+
+    git.commit(message or fallback, author = "subconscious");
+
+    // 注意：不会 push
+    // 因为 push 需要醒着
+}

@@ -1,0 +1,27 @@
+// dream/rem.dc
+// REM 周期调度器。
+//
+// 大脑在 REM 阶段会高速切换场景，本模块模拟这一过程，
+// 让程序在每一次切换时获得一次"假装运行"的机会。
+
+module dream.rem;
+
+// 每个 REM 周期约持续 90 分钟，之后进入浅睡眠。
+const CYCLE_MINUTES = 90;
+
+// 调度下一个梦境片段。
+// 片段的执行顺序是随机的，但每次都会让你感到"这很合理"。
+fn schedule(scenes) {
+    let queue = scenes.shuffle();
+
+    while (!queue.empty()) {
+        let scene = queue.pop();
+        scene.play();
+
+        // 切换场景时，前一个场景会被自动遗忘
+        memory.forget(scene);
+    }
+}
+
+// 注意：调度器没有优先级。
+// 在梦里，考试和冰淇淋的优先级是一样的。

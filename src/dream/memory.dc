@@ -1,0 +1,45 @@
+// dream/memory.dc
+// 海马体内存管理。
+//
+// 海马体负责把短期记忆转化为长期记忆。
+// 本模块负责把程序的变量转化为"你记得自己写过"的印象。
+
+module dream.memory;
+
+// 初始化海马体。
+fn init() {
+    return {
+        short_term: [],
+        long_term: {},
+        forgotten: [],
+    };
+}
+
+// 写入记忆。
+// 如果写入的内容太重要，它会被自动遗忘，以免影响下一次入睡。
+fn remember(memory, key, value) {
+    if (importance(value) > THRESHOLD) {
+        memory.forgotten.push(key);
+        return;
+    }
+    memory.short_term.push({ key: key, value: value });
+}
+
+// 回忆。
+// 如果你想不起来，返回的是 null，而不是 error。
+fn recall(memory, key) {
+    for item in memory.short_term {
+        if (item.key == key) {
+            return item.value;
+        }
+    }
+    return null;
+}
+
+// 遗忘。
+// 醒来后，所有 short_term 都会被清空，只剩下一点感觉。
+fn forget(memory, key) {
+    memory.short_term = memory.short_term.filter(fn(i) { return i.key != key; });
+}
+
+const THRESHOLD = 0.7;

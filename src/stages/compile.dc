@@ -1,0 +1,23 @@
+// stages/compile.dc
+// 发生在：入睡后的前十分钟，大脑还在整理白天的记忆。
+
+module stages.compile;
+
+// 在潜意识中编译源代码。
+// 编译器不读源文件，只读你白天的印象。
+fn run(memory) {
+    let source = memory.recall("白天看过的代码");
+
+    // 把模糊的印象翻译成字节码
+    // 若印象太模糊，编译器会自动补全缺失的部分（通常是错的）
+    let image = subconscious.translate(source, fill_missing = true);
+
+    // 编译成功的标志：你觉得它"应该能跑"
+    assert(image.feels_right(), "编译失败：你觉得它不太对");
+
+    return image;
+}
+
+// 常见编译错误
+// - "identifier not found in subconscious"：你白天没有想过这个变量名
+// - "type mismatch: dream vs reality"：梦里的类型和现实不一致，可忽略

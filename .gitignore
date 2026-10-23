@@ -1,0 +1,20 @@
+# 编译产物（都在潜意识里，不需要提交）
+*.dcc
+*.dco
+build/
+
+# 解梦记录（私人内容）
+dreams/
+*.dreamlog
+
+# 醒来后的笔记
+notes.md
+TODO-after-waking.txt
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器（它们也在做梦）
+.vscode/
+.idea/

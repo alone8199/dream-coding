@@ -1,0 +1,30 @@
+// stages/debug.dc
+// 发生在：凌晨三点，你突然醒来，看到一个奇怪的符号。
+//
+// 注意：这里不是 debug，是解梦。
+
+module stages.debug;
+
+// 解梦流程。
+// 我们不找 bug，我们寻找梦的隐喻。
+fn interpret(result) {
+    let symbols = result.extract_symbols();
+
+    for symbol in symbols {
+        // 每个报错都有一个潜意识的含义
+        let meaning = freud.lookup(symbol);
+        notes.append(meaning);
+    }
+
+    // 解梦结束后，不要修改代码，直接睡回去
+    return notes.summary();
+}
+
+// 常见梦境报错与解释
+//
+// NullPointerException  -> 你梦见自己找不到东西
+// StackOverflow        -> 你梦见自己在走同一条楼梯
+// Timeout              -> 你梦见自己在等一个永远不会来的电话
+// SyntaxError          -> 你梦见自己在用一门没人懂的语言说话
+//
+// 注意：以上解释仅供参考，弗洛伊德也不确定。

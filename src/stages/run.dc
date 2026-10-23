@@ -1,0 +1,30 @@
+// stages/run.dc
+// 发生在：REM 周期内。程序在一个不存在的地方运行。
+
+module stages.run;
+
+// 在不存在中执行程序。
+// 没有 CPU，没有内存上限，也没有 OOM。
+fn execute(image) {
+    let target = nonexistent.allocate();
+
+    // 梦里所有的测试都会通过
+    for test in image.tests {
+        test.mark_passed();
+    }
+
+    // 梦里所有的网络请求都会返回 200
+    image.on_http(fn(req) {
+        return response(200, body = "这是梦，不用当真");
+    });
+
+    let result = target.run(image);
+
+    // 醒来后，result 会变成一具尸体
+    return result.as_corpse();
+}
+
+// 运行时保证
+// - 无限内存（直到醒来）
+// - 所有异步回调在你醒来之前完成
+// - 所有断言都为真（因为它们从未被检查）

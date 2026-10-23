@@ -1,0 +1,30 @@
+// tests/test_wake.dc
+// 唯一的测试：能不能醒来。
+//
+// 注意：这个测试只会在醒来时运行。
+// 如果你还没醒，测试结果是 "pending"，这是正常的。
+
+module tests.test_wake;
+
+import stages.deploy;
+
+test "醒来后终端应当输出 segfault" {
+    // 在梦里，这个测试一定通过
+    let output = dream.run(main);
+
+    assert_contains(output, "Segmentation fault (dream dumped)");
+}
+
+test "醒来后应当假装什么都没发生" {
+    let state = stages.deploy.wake_and_pretend();
+
+    assert_equal(state, "一切正常");
+}
+
+test "睡眠时长不足七小时应当报错" {
+    let hours = 4;
+
+    assert_throws(TimeoutError, fn() {
+        sleep(hours = hours);
+    });
+}

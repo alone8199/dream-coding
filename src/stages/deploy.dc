@@ -1,0 +1,22 @@
+// stages/deploy.dc
+// 发生在：闹钟响起的那一刻。
+
+module stages.deploy;
+
+// 醒来并假装什么都没发生。
+fn wake_and_pretend() {
+    // 第一步：看一眼终端
+    let output = terminal.last_line();
+
+    // 第二步：如果输出是 segfault，深吸一口气
+    if (output.contains("Segmentation fault")) {
+        terminal.print("一切正常。");
+        // 第三步：关掉终端，去吃早饭
+        return;
+    }
+
+    // 理论上不会走到这里。若走到了，说明你还没醒透。
+    // 请再睡五分钟。
+    sleep(minutes = 5);
+    wake_and_pretend();
+}
