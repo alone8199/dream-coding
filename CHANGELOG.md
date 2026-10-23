@@ -1,5 +1,7 @@
 # Changelog
 
+[中文](./CHANGELOG.md) | [English](./CHANGELOG.en.md)
+
 本项目的所有重要变更都会记录在这里。格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
 ## [Unreleased]
@@ -13,12 +15,14 @@
 - 扩展接口：`Interpreter::define_function`、`Interpreter::define_global`、`Interpreter::register_module`。
 - 命令：`dc run`（支持 `argv`）、`dc check`、`dc eval`。
 - `examples/`：示例脚本，CI 会检查它们的输出。
-- `docs/dc-reference.md`、`docs/extending.md`。
+- 文档按语言拆分：`docs/zh/` 与 `docs/en/`。
+- `README.en.md`，以及 `CONTRIBUTING.en.md`、`CHANGELOG.en.md`。
 - `tests/interp_test.cpp`：66 项解释器测试。
 
 ### Changed
 - `src/main.dc` 改为可以运行的程序；早期的伪代码移到 `pseudocode/`。
 - `dc run` 不再只检查括号，而是真正执行脚本。
+- 文档与 README 的叙述改为以 Dream Coding 技术为主，`dc` 是配套执行工具。
 
 ### Previously added
 - `dc` 命令行运行器（C++17）：`sleep`、`run`、`wake`、`version`、`help`。
@@ -30,7 +34,7 @@
 - `src/dream/memory.dc`：海马体内存管理（目前只会忘记）。
 - `tests/test_wake.dc`：唯一的测试用例。
 
-### Changed
+### Changed (earlier)
 - 将源文件后缀从 `.dream` 改为 `.dc`，更短，也更像一个真正的编程语言。
 
 ## [0.1.0] - 2026-10-23

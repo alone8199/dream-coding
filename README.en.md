@@ -59,7 +59,7 @@ dream-coding/
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) first. Note: code is best written in a dream.
+Please read [CONTRIBUTING.md](./CONTRIBUTING.en.md) first. Note: code is best written in a dream.
 
 ## License
 
