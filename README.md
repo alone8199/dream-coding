@@ -163,6 +163,9 @@ A：有。它在你的潜意识里，叫做"第二天早上的羞耻感"。
 - [ ] 支持梦中的异步 I/O
 - [ ] 解决 "醒来后忘记梦的内容" 问题（目前无解）
 
+## Star History
+[![stars](https://afterglow.watch/badge/OWNER/REPO)](https://afterglow.watch)
+
 ## 贡献
 
 欢迎贡献。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)。注意：提交的代码最好是在梦里写的。
