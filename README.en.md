@@ -163,6 +163,9 @@ A: Yes. It lives in your subconscious and is called "the shame you feel the next
 - [ ] Asynchronous I/O in dreams
 - [ ] Solve "forgetting the dream after waking up" (no known fix)
 
+## Star History
+[![stars](https://afterglow.watch/badge/alone8199/dream-coding)](https://afterglow.watch)
+
 ## Contributing
 
 Please read [CONTRIBUTING.en.md](./CONTRIBUTING.en.md) first. Note: code is best written in a dream.
