@@ -52,8 +52,8 @@ dream-coding/
 │   └── en/                 # English docs
 ├── pseudocode/             # early pseudocode drafts, for dreaming only
 ├── README.md / README.en.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
+├── CHANGELOG.md / CHANGELOG.en.md
+├── CONTRIBUTING.md / CONTRIBUTING.en.md
 └── LICENSE
 ```
 

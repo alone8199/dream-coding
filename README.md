@@ -52,8 +52,8 @@ dream-coding/
 │   └── en/                 # English docs
 ├── pseudocode/             # 早期的伪代码草稿，只用来做梦
 ├── README.md / README.en.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
+├── CHANGELOG.md / CHANGELOG.en.md
+├── CONTRIBUTING.md / CONTRIBUTING.en.md
 └── LICENSE
 ```
 
