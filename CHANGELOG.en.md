@@ -15,7 +15,7 @@ All notable changes to this project are recorded here. The format follows [Keep 
 - Extension API: `Interpreter::define_function`, `Interpreter::define_global`, `Interpreter::register_module`.
 - Commands: `dc run` (with `argv`), `dc check`, `dc eval`.
 - `examples/`: sample scripts. CI checks their output.
-- Docs split by language: `docs/zh/` and `docs/en/`.
+- Docs flattened under `docs/`, English versions end in `.en.md`; added technical articles and essays.
 - `README.en.md`, `CONTRIBUTING.en.md`, `CHANGELOG.en.md`.
 - `tests/interp_test.cpp`: 66 interpreter checks.
 

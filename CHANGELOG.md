@@ -15,7 +15,7 @@
 - 扩展接口：`Interpreter::define_function`、`Interpreter::define_global`、`Interpreter::register_module`。
 - 命令：`dc run`（支持 `argv`）、`dc check`、`dc eval`。
 - `examples/`：示例脚本，CI 会检查它们的输出。
-- 文档按语言拆分：`docs/zh/` 与 `docs/en/`。
+- 文档平铺在 `docs/` 下，英文版以 `.en.md` 结尾；新增技术文章与杂谈目录。
 - `README.en.md`，以及 `CONTRIBUTING.en.md`、`CHANGELOG.en.md`。
 - `tests/interp_test.cpp`：66 项解释器测试。
 
