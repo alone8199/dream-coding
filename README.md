@@ -68,6 +68,7 @@ Segmentation fault (dream dumped)
 
 | 想了解什么 | 去哪里 |
 |---|---|
+| 想从零学习这门语言 | [从零学习 Dream Coding](./docs/tutorial.md) |
 | 命令怎么用、退出码是什么 | [使用说明](./docs/usage.md) |
 | 脚本的完整记法 | [脚本参考](./docs/scripts.md) |
 | 如何用 C++ 扩展 `dc` | [扩展指南](./docs/extending.md) |

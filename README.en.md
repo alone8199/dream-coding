@@ -68,6 +68,7 @@ Segmentation fault (dream dumped)
 
 | What you want to know | Where to look |
 |---|---|
+| Learning the language from scratch | [Learn Dream Coding from Scratch](./docs/tutorial.en.md) |
 | How to use the commands, and what the exit codes mean | [Usage](./docs/usage.en.md) |
 | The full dream notation | [Script reference](./docs/scripts.en.md) |
 | How to extend `dc` from C++ | [Extending](./docs/extending.en.md) |
