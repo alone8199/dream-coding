@@ -8,7 +8,7 @@
 **Dream Coding** is a programming paradigm for doing development while you sleep. Source files end in `.dc`. The compiler runs during your REM cycle. The program has already run perfectly in your dream, and when you wake up all you have is its corpse: one line in the terminal.
 
 ```
-$ dc run examples/fib.dc
+$ dc run dreams/fib.dc
 fib(0..9): 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 counter after 3 calls: 3
 ```
@@ -69,7 +69,7 @@ The binary is `build/dc` (on Windows: `build/Release/dc.exe`).
 
 ### 2. Write code
 
-During the day, open `src/main.dc`, read it once, and close it.
+During the day, open `dreams/main.dc`, read it once, and close it.
 
 ### 3. Fall asleep
 
@@ -95,12 +95,10 @@ For the other commands (`run`, `check`, `eval`) and how to run scripts, see [doc
 
 ```
 dream-coding/
-├── src/
-│   ├── main.cpp            # dc entry point
-│   ├── main.dc             # the entry dream, where it all begins
-│   └── dc/                 # dc implementation: lexer, parser, evaluator, stdlib, CLI
-├── examples/               # sample dreams (CI runs them)
-├── tests/                  # unit tests and interpreter tests
+├── dreams/                 # dreams: the entry dream main.dc and sample dreams (CI runs them)
+├── runtime/                # dc: the tool that lets dreams run in the subconscious
+│   ├── src/                # main.cpp and the implementation under dc/
+│   └── tests/              # unit tests and interpreter tests
 ├── docs/
 │   ├── zh/                 # 中文文档：使用说明、脚本参考、扩展、对比
 │   └── en/                 # English docs: usage, script reference, extending, comparison

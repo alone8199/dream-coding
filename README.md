@@ -8,7 +8,7 @@
 **Dream Coding** 是一门在睡眠中完成开发的编程范式。源文件后缀为 `.dc`，编译器运行在你的 REM 周期里，程序在梦中已经完美执行过，醒来后你得到的只是它的尸体。
 
 ```
-$ dc run examples/fib.dc
+$ dc run dreams/fib.dc
 fib(0..9): 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 counter after 3 calls: 3
 ```
@@ -69,7 +69,7 @@ cmake --build build --config Release
 
 ### 2. 写代码
 
-在白天打开 `src/main.dc`，阅读一遍，然后关掉它。
+在白天打开 `dreams/main.dc`，阅读一遍，然后关掉它。
 
 ### 3. 入睡
 
@@ -95,12 +95,10 @@ Segmentation fault (dream dumped)
 
 ```
 dream-coding/
-├── src/
-│   ├── main.cpp            # dc 程序入口
-│   ├── main.dc             # 程序入口梦境，梦的开始
-│   └── dc/                 # dc 的实现：词法、语法、求值、标准库、命令行
-├── examples/               # 示例梦境（CI 会运行它们）
-├── tests/                  # 单元测试与解释器测试
+├── dreams/                 # 梦境：入口梦 main.dc 与示例梦（CI 会运行它们）
+├── runtime/                # dc：让梦境在潜意识中执行的工具
+│   ├── src/                # main.cpp 与 dc/ 下的实现
+│   └── tests/              # 单元测试与解释器测试
 ├── docs/
 │   ├── zh/                 # 中文文档：使用说明、脚本参考、扩展、对比
 │   └── en/                 # English docs

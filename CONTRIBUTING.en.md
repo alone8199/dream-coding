@@ -15,7 +15,7 @@ Thank you for wanting to contribute to Dream Coding. Please read the rules below
 
 1. Fork the repository.
 2. Create a branch. Name it after a dream theme, for example `feat/flying-dream` or `fix/falling-off-cliff`.
-3. Change things under `src/`, `examples/`, or `docs/`. Documentation changes must update both the Chinese and English versions.
+3. Change things under `runtime/`, `dreams/`, or `docs/`. Documentation changes must update both the Chinese and English versions.
 4. Run `dc sleep` and wait for the REM cycle to finish.
 5. Run `dc wake`. If the output contains `Segmentation fault (dream dumped)`, your dream ran successfully.
 6. Run `ctest --test-dir build --output-on-failure` and make sure the tests pass.
@@ -42,7 +42,7 @@ nightmare: fixed forgetting to bring the code to the exam
 
 ## Code style
 
-- C++ indentation: `src/dc/` uses two spaces, `tests/runner_test.cpp` uses four. Follow the style of the file you are editing.
+- C++ indentation: `runtime/src/dc/` uses two spaces, `runtime/tests/runner_test.cpp` uses four. Follow the style of the file you are editing.
 - Comments are written in Chinese; keywords and identifiers are in English.
 - New `.dc` examples must pass `dc check`, and their output must be checkable by CI.
 

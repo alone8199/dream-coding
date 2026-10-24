@@ -58,18 +58,18 @@ jobs:
           "$exe" version
           "$exe" help >/dev/null
           "$exe" sleep 8
-          "$exe" run src/main.dc
+          "$exe" run dreams/main.dc
           "$exe" wake
 
           # 所有示例必须通过语法检查
-          for f in examples/*.dc examples/modules/main.dc; do
+          for f in dreams/*.dc dreams/modules/main.dc; do
             "$exe" check "$f"
           done
 
           # 示例的输出必须正确
-          "$exe" run examples/hello.dc | grep -q "你好，醒醒"
-          "$exe" run examples/fib.dc | grep -q "fib(0..9): 0, 1, 1, 2, 3, 5, 8, 13, 21, 34"
-          "$exe" run examples/modules/main.dc | grep -q "hello, sleeper"
+          "$exe" run dreams/hello.dc | grep -q "你好，醒醒"
+          "$exe" run dreams/fib.dc | grep -q "fib(0..9): 0, 1, 1, 2, 3, 5, 8, 13, 21, 34"
+          "$exe" run dreams/modules/main.dc | grep -q "hello, sleeper"
           "$exe" eval 'print(1 + 2)' | grep -qx "3"
 
           # 运行时错误必须以退出码 4 结束

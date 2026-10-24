@@ -29,8 +29,8 @@ The binary is `build/dc` (on Windows: `build/Release/dc.exe`).
 
 ## Where dream scripts live
 
-- `src/main.dc`: the entry dream of this project. `dc run src/main.dc` runs it.
-- `examples/`: sample scripts. CI checks their syntax and output.
+- `dreams/main.dc`: the entry dream of this project. `dc run dreams/main.dc` runs it.
+- `dreams/`: sample scripts. CI checks their syntax and output.
 - Any other `.dc` file can live anywhere; pass its path to `dc run`.
 
 ## When something goes wrong

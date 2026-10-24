@@ -29,8 +29,8 @@ ctest --test-dir build -C Release --output-on-failure
 
 ## 梦境脚本放在哪里
 
-- `src/main.dc`：项目的入口梦境，`dc run src/main.dc` 会执行它。
-- `examples/`：示例脚本，CI 会检查它们的语法和输出。
+- `dreams/main.dc`：项目的入口梦境，`dc run dreams/main.dc` 会执行它。
+- `dreams/`：示例脚本，CI 会检查它们的语法和输出。
 - 其他 `.dc` 文件可以放在任何地方，用 `dc run` 指定路径即可。
 
 ## 出错时

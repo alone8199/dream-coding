@@ -17,17 +17,17 @@ endif()
 
 # 解释器核心：词法、语法、值、求值器、内置函数、标准库、命令行逻辑。
 add_library(dc_core STATIC
-    src/dc/lexer.cpp
-    src/dc/parser.cpp
-    src/dc/value.cpp
-    src/dc/interpreter.cpp
-    src/dc/builtins.cpp
-    src/dc/stdlib.cpp
-    src/dc/runner.cpp)
-target_include_directories(dc_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    runtime/src/dc/lexer.cpp
+    runtime/src/dc/parser.cpp
+    runtime/src/dc/value.cpp
+    runtime/src/dc/interpreter.cpp
+    runtime/src/dc/builtins.cpp
+    runtime/src/dc/stdlib.cpp
+    runtime/src/dc/runner.cpp)
+target_include_directories(dc_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/runtime/src)
 
 # 命令行程序。
-add_executable(dc src/main.cpp)
+add_executable(dc runtime/src/main.cpp)
 target_link_libraries(dc PRIVATE dc_core)
 
 install(TARGETS dc RUNTIME DESTINATION bin)
@@ -35,11 +35,11 @@ install(TARGETS dc RUNTIME DESTINATION bin)
 # include(CTest) 会提供 BUILD_TESTING 选项，默认开启。
 include(CTest)
 if(BUILD_TESTING)
-    add_executable(dc_tests tests/runner_test.cpp)
+    add_executable(dc_tests runtime/tests/runner_test.cpp)
     target_link_libraries(dc_tests PRIVATE dc_core)
     add_test(NAME dc_tests COMMAND dc_tests)
 
-    add_executable(dc_interp_tests tests/interp_test.cpp)
+    add_executable(dc_interp_tests runtime/tests/interp_test.cpp)
     target_link_libraries(dc_interp_tests PRIVATE dc_core)
     add_test(NAME dc_interp_tests COMMAND dc_interp_tests)
 endif()

@@ -24,6 +24,7 @@ All notable changes to this project are recorded here. The format follows [Keep 
 - `dc run` no longer only checks braces; it executes the script.
 - Docs and READMEs now lead with the Dream Coding technique. `dc` is the companion runner.
 - The script reference is now titled "Dream Script Notation Reference", to make clear it documents a notation rather than a language specification.
+- Repository layout: the entry dream and sample dreams moved to `dreams/`, and the `dc` source and tests moved to `runtime/`.
 
 ### Previously added
 - The `dc` command-line runner (C++17): `sleep`, `run`, `wake`, `version`, `help`.
