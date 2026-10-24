@@ -5,7 +5,7 @@
 > Compiled in the subconscious, run in nonexistence.
 > Write code in your dreams; wake up to nothing but bugs and poetry.
 
-**Dream Coding** is a programming paradigm for doing development while you sleep. Source files end in `.dc`. The compiler runs during your REM cycle. The program has already run perfectly in your dream, and when you wake up all you have is its corpse: one line in the terminal.
+**Dream Coding** is a technique for doing development while you sleep. You write the dream by day, let it run at night, and when you wake up you have one line of segfault and a pile of feelings to interpret.
 
 ```
 $ dc run dreams/fib.dc
@@ -17,48 +17,23 @@ counter after 3 calls: 3
 
 ## Contents
 
-- [Why Dream Coding](#why-dream-coding)
-- [How it differs from vibe coding](#how-it-differs-from-vibe-coding)
 - [Quick start](#quick-start)
-- [Project layout](#project-layout)
+- [About the technique](#about-the-technique)
+- [Reading](#reading)
 - [Dream notation at a glance](#dream-notation-at-a-glance)
+- [Project layout](#project-layout)
 - [FAQ](#faq)
 - [Roadmap](#roadmap)
+- [Contributing](#contributing)
 - [License](#license)
-
-## Why Dream Coding
-
-- **Zero keyboard wear**: no need to shake the keyboard, just close your eyes.
-- **Unlimited runtime**: no memory limit in dreams, and no OOM.
-- **Perfect test coverage**: in a dream, every test passes.
-- **Native async**: your callbacks all finish before you wake up.
-- **No code review needed**: nobody can review a PR that only exists in your subconscious.
-
-## How it differs from vibe coding
-
-| | vibe coding | dream coding |
-|---|---|---|
-| Your action | Shake the keyboard and let AI guess your mood | Close the IDE and shut your eyes |
-| Output | Shaky code that runs | A utopia that doesn't run |
-| Debugging | Go to Stack Overflow | Go interpret your dream with Freud |
-| Committing | `git commit -m "fix"` | Fall asleep |
-| Deploying | Ship it and pray | Wake up and pretend nothing happened |
-| Final destination | Stack Overflow | Freud |
-
-The full comparison is in [docs/en/vibe-vs-dream.md](./docs/en/vibe-vs-dream.md).
 
 ## Quick start
 
 ### 1. Prepare
 
-You need:
-
 - A bed
 - At least 7 hours of sleep (less than that and `dc sleep` reports `TimeoutError: sleep too short`)
-- One melatonin tablet (optional, but strongly recommended)
 - A C++17 compiler and CMake, to build `dc`
-
-Build:
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -67,9 +42,9 @@ cmake --build build --config Release
 
 The binary is `build/dc` (on Windows: `build/Release/dc.exe`).
 
-### 2. Write code
+### 2. Write the dream by day
 
-During the day, open `dreams/main.dc`, read it once, and close it.
+Open `dreams/main.dc`, read it once, then close it.
 
 ### 3. Fall asleep
 
@@ -89,29 +64,33 @@ Segmentation fault (dream dumped)
 
 That is the normal output. Don't debug. Go interpret the dream.
 
-For the other commands (`run`, `check`, `eval`) and how to run scripts, see [docs/en/usage.md](./docs/en/usage.md).
+For the other commands (`run`, `check`, `eval`), see [docs/en/usage.md](./docs/en/usage.md).
 
-## Project layout
+## About the technique
 
-```
-dream-coding/
-├── dreams/                 # dreams: the entry dream main.dc and sample dreams (CI runs them)
-├── runtime/                # dc: the tool that lets dreams run in the subconscious
-│   ├── src/                # main.cpp and the implementation under dc/
-│   └── tests/              # unit tests and interpreter tests
-├── docs/
-│   ├── zh/                 # 中文文档：使用说明、脚本参考、扩展、对比
-│   └── en/                 # English docs: usage, script reference, extending, comparison
-├── pseudocode/             # early pseudocode drafts, for dreaming only
-├── README.md / README.en.md
-├── CHANGELOG.md / CHANGELOG.en.md
-├── CONTRIBUTING.md / CONTRIBUTING.en.md
-└── LICENSE
-```
+Dream Coding comes down to three things: write your intent by day, let it execute at night, interpret the result after waking. It is not a programming language but a way of working. `dc` is the tool that makes that way of working runnable.
+
+| | vibe coding | dream coding |
+|---|---|---|
+| Your action | Shake the keyboard and let AI guess your mood | Close the IDE and shut your eyes |
+| Output | Shaky code that runs | A utopia that doesn't run |
+| Debugging | Go to Stack Overflow | Go interpret your dream with Freud |
+| Committing | `git commit -m "fix"` | Fall asleep |
+| Deploying | Ship it and pray | Wake up and pretend nothing happened |
+
+The full comparison is in [docs/en/vibe-vs-dream.md](./docs/en/vibe-vs-dream.md).
+
+## Reading
+
+The writing in this project falls into three groups:
+
+- **Technical articles**: 36 of them, from the principles of dream coding to the lexer, syntax tree, value representation and module system of `dc`. Entry point: [docs/zh/articles/](./docs/zh/articles/README.md). *Currently in Chinese.*
+- **Script and extension reference**: the full dream notation, and how to register native functions and modules in C++. See [docs/en/scripts.md](./docs/en/scripts.md) and [docs/en/extending.md](./docs/en/extending.md).
+- **Essays**: poems, monologues, dialogues, a parable and a glossary. They have little to do with the technique, or rather, they circle around it. Entry point: [docs/zh/essays/](./docs/zh/essays/README.md). *Currently in Chinese only.*
 
 ## Dream notation at a glance
 
-`.dc` dream scripts use a notation close to Python and C. Blocks use braces, and semicolons are optional. It is a way to hand your ideas to the subconscious, not a language specification for others to maintain:
+`.dc` dream scripts use a notation close to Python and C. Blocks use braces, and semicolons are optional. It is a way to hand your ideas to the subconscious, not a language specification for others to maintain.
 
 ```dc
 import dream;
@@ -133,6 +112,26 @@ Segmentation fault (dream dumped)
 ```
 
 The full notation is in [docs/en/scripts.md](./docs/en/scripts.md).
+
+## Project layout
+
+```
+dream-coding/
+├── dreams/                 # dreams: the entry dream main.dc and sample dreams (CI runs them)
+├── runtime/                # dc: the tool that lets dreams run in the subconscious
+│   ├── src/                # main.cpp and the implementation under dc/
+│   └── tests/              # unit tests and interpreter tests
+├── docs/
+│   ├── zh/                 # Chinese docs
+│   │   ├── articles/       # technical articles (36)
+│   │   └── essays/         # essays
+│   └── en/                 # English: usage, script reference, extending, comparison
+├── pseudocode/             # early pseudocode drafts, for dreaming only
+├── README.md / README.en.md
+├── CHANGELOG.md / CHANGELOG.en.md
+├── CONTRIBUTING.md / CONTRIBUTING.en.md
+└── LICENSE
+```
 
 ## FAQ
 
