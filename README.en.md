@@ -84,9 +84,9 @@ The full comparison is in [docs/en/vibe-vs-dream.md](./docs/en/vibe-vs-dream.md)
 
 The writing in this project falls into three groups:
 
-- **Technical articles**: 36 of them, from the principles of dream coding to the lexer, syntax tree, value representation and module system of `dc`. Entry point: [docs/zh/articles/](./docs/zh/articles/README.md). *Currently in Chinese.*
+- **Technical articles**: 36 of them, from the principles of dream coding to the lexer, syntax tree, value representation and module system of `dc`. Entry point: [docs/en/articles/](./docs/en/articles/README.md).
 - **Script and extension reference**: the full dream notation, and how to register native functions and modules in C++. See [docs/en/scripts.md](./docs/en/scripts.md) and [docs/en/extending.md](./docs/en/extending.md).
-- **Essays**: poems, monologues, dialogues, a parable and a glossary. They have little to do with the technique, or rather, they circle around it. Entry point: [docs/zh/essays/](./docs/zh/essays/README.md). *Currently in Chinese only.*
+- **Essays**: poems, monologues, dialogues, a parable and a glossary. They have little to do with the technique, or rather, they circle around it. Entry point: [docs/en/essays/](./docs/en/essays/README.md).
 
 ## Dream notation at a glance
 
@@ -126,6 +126,8 @@ dream-coding/
 │   │   ├── articles/       # technical articles (36)
 │   │   └── essays/         # essays
 │   └── en/                 # English: usage, script reference, extending, comparison
+│       ├── articles/       # technical articles (36)
+│       └── essays/         # essays
 ├── pseudocode/             # early pseudocode drafts, for dreaming only
 ├── README.md / README.en.md
 ├── CHANGELOG.md / CHANGELOG.en.md
