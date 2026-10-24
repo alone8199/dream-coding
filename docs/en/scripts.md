@@ -1,6 +1,6 @@
-# Script Reference
+# Dream Script Notation Reference
 
-The dc script syntax is close to Python and C. Blocks use braces, and semicolons are optional. Source files end in `.dc`, and `dc` executes them in the subconscious.
+`.dc` dream scripts are written in a notation close to Python and C. Blocks use braces, and semicolons are optional. `dc` hands them to the subconscious to run. This page only records how the notation is written. It is not a language specification.
 
 ## Comments
 

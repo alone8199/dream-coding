@@ -21,7 +21,7 @@ counter after 3 calls: 3
 - [How it differs from vibe coding](#how-it-differs-from-vibe-coding)
 - [Quick start](#quick-start)
 - [Project layout](#project-layout)
-- [Syntax at a glance](#syntax-at-a-glance)
+- [Dream notation at a glance](#dream-notation-at-a-glance)
 - [FAQ](#faq)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -111,9 +111,9 @@ dream-coding/
 └── LICENSE
 ```
 
-## Syntax at a glance
+## Dream notation at a glance
 
-`.dc` syntax is close to Python and C. Blocks use braces, and semicolons are optional:
+`.dc` dream scripts use a notation close to Python and C. Blocks use braces, and semicolons are optional. It is a way to hand your ideas to the subconscious, not a language specification for others to maintain:
 
 ```dc
 import dream;
@@ -134,7 +134,7 @@ fib(10) = 55
 Segmentation fault (dream dumped)
 ```
 
-The full syntax is in [docs/en/scripts.md](./docs/en/scripts.md).
+The full notation is in [docs/en/scripts.md](./docs/en/scripts.md).
 
 ## FAQ
 

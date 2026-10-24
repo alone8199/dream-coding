@@ -23,6 +23,7 @@ All notable changes to this project are recorded here. The format follows [Keep 
 - `src/main.dc` is now a runnable program. Early pseudocode moved to `pseudocode/`.
 - `dc run` no longer only checks braces; it executes the script.
 - Docs and READMEs now lead with the Dream Coding technique. `dc` is the companion runner.
+- The script reference is now titled "Dream Script Notation Reference", to make clear it documents a notation rather than a language specification.
 
 ### Previously added
 - The `dc` command-line runner (C++17): `sleep`, `run`, `wake`, `version`, `help`.

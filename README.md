@@ -21,7 +21,7 @@ counter after 3 calls: 3
 - [与 vibe coding 的区别](#与-vibe-coding-的区别)
 - [快速开始](#快速开始)
 - [项目结构](#项目结构)
-- [语法速览](#语法速览)
+- [梦境脚本记法](#梦境脚本记法)
 - [常见问题](#常见问题)
 - [路线图](#路线图)
 - [许可证](#许可证)
@@ -111,9 +111,9 @@ dream-coding/
 └── LICENSE
 ```
 
-## 语法速览
+## 梦境脚本记法
 
-`.dc` 文件的语法接近 Python 和 C，用花括号分块，分号可以省略：
+`.dc` 梦境脚本用一种接近 Python 和 C 的记法书写，用花括号分块，分号可以省略。它是把想法交给潜意识的格式，不是需要别人维护的语言规范：
 
 ```dc
 import dream;
@@ -134,7 +134,7 @@ fib(10) = 55
 Segmentation fault (dream dumped)
 ```
 
-完整语法见 [docs/zh/scripts.md](./docs/zh/scripts.md)。
+完整记法见 [docs/zh/scripts.md](./docs/zh/scripts.md)。
 
 ## 常见问题
 

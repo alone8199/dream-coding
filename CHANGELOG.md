@@ -23,6 +23,7 @@
 - `src/main.dc` 改为可以运行的程序；早期的伪代码移到 `pseudocode/`。
 - `dc run` 不再只检查括号，而是真正执行脚本。
 - 文档与 README 的叙述改为以 Dream Coding 技术为主，`dc` 是配套执行工具。
+- 脚本参考改称“梦境脚本记法参考”，强调它是记录格式而不是语言规范。
 
 ### Previously added
 - `dc` 命令行运行器（C++17）：`sleep`、`run`、`wake`、`version`、`help`。
